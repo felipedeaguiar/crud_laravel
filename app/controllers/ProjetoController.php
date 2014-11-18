@@ -56,9 +56,9 @@ public function addProjeto(){
 public function getProjeto($id_projeto){
     
    $tarefas = Projeto::find($id_projeto)->tarefas()->get();
-   $projeto = Projeto::find($id_projeto)->get(); 
-   return View::make('projeto.')->with('tarefas', $tarefas)->with('projeto', $projeto);  
-    
+   $projeto = Projeto::find($id_projeto); 
+   return View::make('projeto.detalhe')->with('tarefas', $tarefas)->with('projeto', $projeto);  
+   
 }
 
 public function listarProjetos(){

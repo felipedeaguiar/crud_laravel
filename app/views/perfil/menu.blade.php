@@ -19,7 +19,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="{{url('perfil')}}">Home</a></li>   
             <li><a href="{{url('listar/projetos')}}">Lista de Projetos</a></li>     
-            <li><a href="{{url('get/perfil', $usuario->id)}}">Editar Perfil</a></li>    
+            <li><a href="{{url('get/perfil', Auth::user()->id)}}">Editar Perfil</a></li>    
             <li><a href="{{url('cadastrar/tarefa')}}">Cadastrar Tarefa</a></li>   
             <li><a href="{{url('cadastrar/projeto')}}">Cadastrar Projeto</a></li>   
           </ul>
@@ -27,7 +27,7 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-         <li><a class=""><span class="glyphicon glyphicon-user"></span> Seja bem vindo <b>{{$usuario->nome}}</b></a></li>   
+         <li><a class=""><span class="glyphicon glyphicon-user"></span> Seja bem vindo <b>{{Auth::user()->nome}}</b></a></li>   
          <li><a href="{{url('perfil/sair')}}" class=""><span class="glyphicon glyphicon-off"></span> Sair</b></a></li>   
       </ul>
     </div><!-- /.navbar-collapse -->
