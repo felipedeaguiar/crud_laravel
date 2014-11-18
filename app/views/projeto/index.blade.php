@@ -44,7 +44,7 @@
             @endif
             
       
-            {{ Form::submit('Adicionar tarefa', array('class' => 'btn btn-lg btn-primary btn-block')) }}
+            {{ Form::submit('Adicionar Projeto', array('class' => 'btn btn-lg btn-primary btn-block')) }}
 
         {{ Form::close() }}
         

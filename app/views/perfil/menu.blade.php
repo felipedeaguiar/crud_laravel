@@ -18,7 +18,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Sistema<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="{{url('perfil')}}">Home</a></li>   
-            <li><a href="{{url('listar/projetos')}}">Listar tarefas</a></li>     
+            <li><a href="{{url('listar/projetos')}}">Lista de Projetos</a></li>     
             <li><a href="{{url('get/perfil', $usuario->id)}}">Editar Perfil</a></li>    
             <li><a href="{{url('cadastrar/tarefa')}}">Cadastrar Tarefa</a></li>   
             <li><a href="{{url('cadastrar/projeto')}}">Cadastrar Projeto</a></li>   
@@ -36,7 +36,7 @@
 <div class="row">
   <div class="perfil col-xs-3 col-md-2">
     <a href="#" class="thumbnail">
-     {{ HTML::image('assets/uploads/'.$usuario->imagem_perfil, 'Smile', array('id' => 'smile')) }}
+     {{ HTML::image('assets/uploads/'. Auth::user()->imagem_perfil, 'Smile', array('id' => 'smile')) }}
     </a>
-     <h2 class="username"><b>{{$usuario->nome}}</b></h2>
+     <h2 class="username"><b>{{Auth::user()->nome}}</b></h2>
   </div>

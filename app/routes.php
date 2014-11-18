@@ -44,17 +44,11 @@ Route::group(array('before' => 'auth'), function()
         Route::post('cadastrar/tarefa', 'TarefaController@addTarefa');
         Route::get('cadastrar/projeto', 'ProjetoController@index');   
         Route::post('cadastrar/projeto', 'ProjetoController@addProjeto');   
-        Route::get('listar/projetos', function(){
+        Route::get('listar/projetos', 'ProjetoController@listarProjetos');
+        Route::get('get/projeto/{id}', 'ProjetoController@getProjeto');
             
-          $tarefas = Projeto::find(2)->tarefas()->get();
        
-              foreach ($tarefas as $tarefa) {
-                  
-                  echo $tarefa->titulo . "</br>";
-              }
-              
-          
-        });
+  
     });
 });
 

@@ -3,9 +3,7 @@
 class ProjetoController extends BaseController
 {
             
-            
-        
-        
+                    
 public function index(){
        
    $user = Auth::user();
@@ -53,6 +51,21 @@ public function addProjeto(){
             
         }
     }
+}
+
+public function getProjeto($id_projeto){
+    
+   $tarefas = Projeto::find($id_projeto)->tarefas()->get();
+   $projeto = Projeto::find($id_projeto)->get(); 
+   return View::make('projeto.')->with('tarefas', $tarefas)->with('projeto', $projeto);  
+    
+}
+
+public function listarProjetos(){
+    
+    $user = Auth::user();
+    $projetos = Projeto::all();
+    return View::make('projeto.lista')->with('projetos', $projetos)->with('usuario', $user);  
 }            
             
 }
