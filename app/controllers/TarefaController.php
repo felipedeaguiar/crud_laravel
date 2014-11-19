@@ -60,7 +60,7 @@ public function editTarefa($id_tarefa){
    $tarefa->data_inicio_tarefa = implode("-",array_reverse(explode("/", Input::get("data-inicio"))));
    $tarefa->data_final_tarefa =  implode("-",array_reverse(explode("/", Input::get("data-final"))));
    $tarefa->status = Input::get('andamento'); 
-   $tarefa->projeto = Input::get('projeto');    
+   $tarefa->projeto = Input::get('projetos');    
    
    if($tarefa->save()){
        

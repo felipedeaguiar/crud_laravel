@@ -22,6 +22,7 @@
             <th>Descricao</th>
             <th>Data de início</th>
             <th>Previsão de entrega</th>
+            <th>Andamento</th>
           </tr>
         </thead>
         <tbody>
@@ -33,7 +34,8 @@
             <td><a href="{{url('get/tarefa/' . $tarefa->id )}}">{{$tarefa->titulo}}</a></td>
             <td>{{$tarefa->descricao}}</td>
             <td>{{$data_inicio}}</td>
-            <td>{{$data_final}}</td>       
+            <td>{{$data_final}}</td>
+            <td>{{$tarefa->status}}</td>             
           </tr>
      @endforeach
       

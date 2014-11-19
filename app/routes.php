@@ -36,7 +36,7 @@ Route::group(array('before' => 'auth'), function()
     
     Route::group(array('before' => 'auth.admin'), function()
     {
-        Route::get('perfil', 'PerfilController@index');
+        Route::get('perfil', 'ProjetoController@listarProjetos');
         Route::get('get/perfil/{id}', 'PerfilController@getPerfil');
         Route::post('perfil/editar', 'PerfilController@editPerfil');
         Route::get('perfil/sair', 'PerfilController@sair');
