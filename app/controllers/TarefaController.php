@@ -51,6 +51,23 @@ class TarefaController extends BaseController {
       }
    } 
 
+public function editTarefa($id_tarefa){
+    
+    
+   $tarefa = Tarefa::find($id_tarefa);           
+   $tarefa->titulo = Input::get('titulo');        
+   $tarefa->descricao = Input::get('descricao');
+   $tarefa->data_inicio_tarefa = implode("-",array_reverse(explode("/", Input::get("data-inicio"))));
+   $tarefa->data_final_tarefa =  implode("-",array_reverse(explode("/", Input::get("data-final"))));
+   $tarefa->status = Input::get('andamento'); 
+   $tarefa->projeto = Input::get('projeto');    
+   
+   if($tarefa->save()){
+       
+     return Redirect::to('get/tarefa/'.$tarefa->id) -> with('sucesso', 1);
+      
+   }                     
+}
 
 public function getTarefa($id_tarefa){
     

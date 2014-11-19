@@ -28,14 +28,13 @@
                 {{ Form::textarea('descricao', '', array('class' => 'form-control input-lg', 'placeholder' => 'Descrição da tarefa')) }}
             </div>
             
-                <div class="form-group">
+            <div class="form-group">
                 
-             
                 {{Form::label('relacao', 'Relacionada ao projeto:')}}
                 {{ Form::select('projetos', $projetos) }}
             </div>
-                  
-         
+               
+               
             <div class="form-group">
                 {{ Form::text('data-inicio', '', array('class' => 'form-control input-lg date', 'placeholder' => 'Data início')) }}
             </div>

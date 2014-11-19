@@ -47,7 +47,7 @@ Route::group(array('before' => 'auth'), function()
         Route::get('listar/projetos', 'ProjetoController@listarProjetos');
         Route::get('get/projeto/{id}', 'ProjetoController@getProjeto');
         Route::get('get/tarefa/{id}', 'TarefaController@getTarefa');
-            
+        Route::post('editar/tarefa/{id}', 'TarefaController@editTarefa');    
        
   
     });
