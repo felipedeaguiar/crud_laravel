@@ -11,10 +11,10 @@
 |
 */
 
-// Validação CSRF
-Route::when('*', 'csrf', array('post'));
 
-// Visitante
+
+
+
 Route::get('/',
         array(
             'as' => 'home', 
@@ -29,7 +29,7 @@ Route::post('entrar', 'HomeController@postEntrar');
 Route::get('sair', 'HomeController@getSair');
 
 
-// Verifica se o usuário está logado
+
 Route::group(array('before' => 'auth'), function()
 {
   
@@ -46,6 +46,7 @@ Route::group(array('before' => 'auth'), function()
         Route::post('cadastrar/projeto', 'ProjetoController@addProjeto');   
         Route::get('listar/projetos', 'ProjetoController@listarProjetos');
         Route::get('get/projeto/{id}', 'ProjetoController@getProjeto');
+        Route::get('get/tarefa/{id}', 'TarefaController@getTarefa');
             
        
   

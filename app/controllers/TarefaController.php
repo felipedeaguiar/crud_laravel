@@ -51,10 +51,20 @@ class TarefaController extends BaseController {
       }
    } 
 
+
+public function getTarefa($id_tarefa){
+    
+    $tarefa = Tarefa::find($id_tarefa);
+    $projetos = Projeto::lists('titulo', 'id');
+
+    return View::make('tarefa.edit')->with('tarefa', $tarefa)->with('projetos', $projetos);
+}
+
  public function listaTarefas(){
      
      $tarefa = new Tarefa;
      $tarefas = $tarefa->projetos();
+     
     foreach ($tarefas as $tarefa) {
         
         var_dump($tarefa->id);
