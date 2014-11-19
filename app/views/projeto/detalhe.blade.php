@@ -28,10 +28,10 @@
         @foreach($tarefas as $tarefa)   
            <tr>
        <?php //conversão de data mysql para formato brasileiro
-         $data_inicio = implode("/",array_reverse(explode("-",date('Y-m-d', strtotime($tarefa->data_inicio)))));  
-         $data_final = implode("/",array_reverse(explode("-",date('Y-m-d', strtotime($tarefa->final)))));?>
+         $data_inicio = implode("/",array_reverse(explode("-",date('Y-m-d', strtotime($tarefa->data_inicio_tarefa)))));  
+         $data_final = implode("/",array_reverse(explode("-",date('Y-m-d', strtotime($tarefa->data_final_tarefa)))));?>
             <td><a href="{{url('get/tarefa/' . $tarefa->id )}}">{{$tarefa->titulo}}</a></td>
-            <td>{{$projeto->escopo}}</td>
+            <td>{{$tarefa->descricao}}</td>
             <td>{{$data_inicio}}</td>
             <td>{{$data_final}}</td>       
           </tr>
